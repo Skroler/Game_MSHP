@@ -23,9 +23,18 @@ class Segment:
         self.height = height
         self.color = color
 
+    def move (self, direction, pixels = 10):
+        if direction == 1:
+            self.y += pixels
+        if direction == 2:
+            self.y -= pixels
+        if direction == 3:
+            self.x -= pixels
+        if direction == 4:
+            self.x += pixels
+
     def draw(self, surface):
         pygame.draw.rect(surface, self.color, (self.point.x, self.point.y, self.width, self.height))
-
 
 class Snake:
     segments = []
